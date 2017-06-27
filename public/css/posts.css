@@ -1,0 +1,49 @@
+.create{
+	bottom: 8%; 
+	text-align: center;
+	position: fixed;
+	
+}
+
+.post .body{
+	color: grey;
+}
+
+.post .title{
+	color: lightblue;
+}
+
+	/* post name css */
+#pn{ 
+	font-family: times;
+	font-size: 18px;
+}
+
+
+.comment{
+	color: grey;
+	font-family: arial;
+}
+
+.comment b{
+	color:green;
+}
+
+.comment p{
+	font-family: arial;
+}
+
+.comment #name{
+	float: right;
+	color: yellow;
+}
+/* alert css */
+
+
+	/*SIDE BAR CSS*/
+.sidebar{
+	float:right;
+	padding-right: 10px;
+	background: rgba(0,0,0,0.4) repeat;
+	font-size: 18px;
+}
