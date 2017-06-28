@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 
+
 @section('body')
 	
 	@include('layouts.alert')
@@ -25,7 +26,7 @@
 				<p class="body"  style=" color:white;">
 					{!! nl2br($p->body) !!} 
 					<i>
-						<small style="color: grey;"> {{ $p->created_at->toFormattedDateString() }} </small>
+						<small style="color: grey;"> {{ $p->created_at->diffForHumans() }} </small>
 					</i>
 					<br>
 					<small style="color:yellow;"> {{ ucfirst($p->user->first_name ." ". $p->user->last_name) }} </small>
@@ -46,7 +47,7 @@
 
 				<p class="body" style="color:#33ffff;">{!! nl2br($p->body) !!} 
 					<small style="color: grey;">
-						<i> {{ $p->created_at->toFormattedDateString() }} </i>
+						<i> {{ $p->created_at->diffForHumans() }} </i>
 					</small>
 					<br>
 					<small style="color:yellow;"> {{ ucfirst($p->user->first_name ." ". $p->user->last_name) }} </small>
@@ -68,7 +69,7 @@
 	
 
 	<div class="container create">
-		<button class="btn btn-primary" data-toggle="modal" data-target="#poem_modal">Submit a Poem</button>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#poem_modal" id="create">Submit a Poem</button>
 	</div>
 @else
 	<div class="panel">
@@ -88,12 +89,13 @@
 @section('scripts')
 
 <script >
-     var count = {{ $errors->has('body') }};
+     var count = {{ $errors->has('body','title','category') }};
    
         if(count)
         {
             $('#create').trigger('click');
         }
+
 
   </script>
 

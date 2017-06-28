@@ -25,13 +25,13 @@
 				{{ csrf_field() }}
 
 				<div class="form-group">
-					<label for="image">Add a Profile Photo:</label>
+					<label for="image">Add/Change Profile Photo:</label><br>
 					<small><b style="color:orange;">*.jpg, *jpeg</b> and <b style="color:orange;">*.png</b> only</small><br>
 					<input type="file" name="image" id="image" >
 				</div>
 
 				<div class="form-group">
-					<input type="submit" value="Upload" class="btn btn-primary" >
+					<input type="submit" value="Upload" class="btn btn-primary">
 				</div>	
 				@include('errors.errors')	
 			</form>

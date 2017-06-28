@@ -12,11 +12,24 @@
 				<h4 style="color: orange;">{{ $poem->title }}</h4>
 				<p class="body"  style=" color:white;">{!! nl2br($poem->body) !!} 
 					<i><br>
-						<small style="color: grey;"> {{ $poem->created_at->toFormattedDateString() }} -></small></i>
+						<small style="color: grey;"> {{ $poem->created_at->diffForHumans() }} -></small></i>
 					  by <small style="color: yellow;">{{ ucfirst($poem->user->first_name ." ". $poem->user->last_name) }} </small>
 				</p>	
-</div>
+
+				<!-- ADDING A BUTTON TO EDIT POEM BY AUTHOR -->
+@if(Auth::check())
+	@if(Auth::user()->id == $poem->user_id)
+		<div style="margin-left: 30%;">
+			<button class="btn btn-primary glyphicon glyphicon-edit" style="text-align:right;"
+			data-toggle="modal" data-target="#edit_poem">Edit</button> 
+		</div>
+	@endif
+@endif
+</div>	
+
 <hr class="lhr">
+
+	<!-- COMMENTS SECTION -->
 <div class="container">
 	<div class="panel panel-success" style="border: none;">
 		<div class="panel-heading" style="text-align: center;">
@@ -36,26 +49,30 @@
 	</div>
 </div>
 
-{{-- checking user login to add comment form or register/login link --}}
+ <!-- checking user login to add comment form or register/login link -->
 @if(Auth::guard('web')->check())
 	
 
-	<div class="container create">
-		<button class="btn btn-primary" data-toggle="modal" data-target="#comment_modal">Leave a Comment</button>
+	<div class="container" id="addcom">
+		<button class="btn btn-primary" data-toggle="modal" data-target="#comment_modal" >Leave a Comment</button>
 	</div>
 @else
 	<div class="panel">
-		<div class="container create">
-			<a href="{{url('/login')}}">Login</a> or <a href="{{url('/register')}}">Register</a></li> to publish a Poem.
+		<div class="container" id="addcom">
+			<a href="{{url('/login')}}">Login</a> or <a href="{{url('/register')}}">Register</a></li> to leave a comment.
 		</div>
 	</div>
 @endif
 
+	<!-- ADDING MODALS -->
 @include('modals.add_comment')
+@include('modals.edit_poem')
+
 @endsection
 
 @section('scripts')
 
+	<!-- checking for comment errors so as to reopen the comment modal -->
 <script >
   var count = {{ $errors->has('body') }};
    

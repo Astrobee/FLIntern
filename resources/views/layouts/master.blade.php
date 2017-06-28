@@ -31,8 +31,24 @@
         <link href="https://fonts.googleapis.com/css?family=Montaga" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet"> 
-        <!-- Styles -->
-      
+        
+        <!-- Scripts -->
+        <script>
+
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+
+                if(response = 'success')
+                {
+                    $('#success').delay(3000).fadeOut();
+                }
+
+                });
+
+
+        
+        </script>
+
     </head>
     <body>
        @include('layouts.nav')

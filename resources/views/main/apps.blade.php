@@ -23,7 +23,7 @@
 
 			<div class="col-md-3">
 				<p><h4>Download</h4>
-					<span class="glyphicon glyphicon-download" style="color:green;"></span><a href="{{ route('wordy.get')}}">wordY_2.2.2.iso</a><br>
+					<span class="glyphicon glyphicon-download" style="color:green;"></span><a href="{{ route('wordy.get')}}">wordY_2.2.2.exe</a><br>
 					<span class="glyphicon glyphicon-download" style="color:green;"></span><a href="{{ route('readme.get')}}">Readme.txt</a>
 
 					<h1>Description</h1>

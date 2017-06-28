@@ -27,4 +27,10 @@ class PageController extends Controller
         
         return view('main.apps');
     }
+
+    public function author()
+    {
+
+        return view('main.author');
+    }
 }

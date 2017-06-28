@@ -20,7 +20,7 @@
                     <div class="col-md-6 missions">
                                <h2 style="color:lightblue; font-family: 'El Messiri', sans-serif;">How They Do This</h2>
                                     <p>
-                                        With the help of numerous <a href="/"><b>Apps</b></a> created by the <a href=""><b>Team</b></a> at Farmerline, they are able to send audios of information on how the weather condition at a particular time is or is going to be. They collect information on farmers including the language they understand to be able to provide the audios in their language. Thats amazing.
+                                        With the help of numerous <b>Apps</b> created by the <a href="{{ route('team') }}"><b>Team</b></a> at Farmerline, they are able to send audios of information on how the weather condition at a particular time is or is going to be. They collect information on farmers including the language they understand to be able to provide the audios in their language. Thats amazing.
                                     </p>
                     </div>
 

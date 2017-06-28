@@ -52,13 +52,17 @@
 <hr class="dhr">
 				@include('weeks.first')
 				<hr class="lhr">
+				
 				@include('weeks.second')
 				<hr class="lhr">
+				
 				@include('weeks.third')
-				<h1 style="text-align: center; color: white; font-family: 'algerian';">WEEK <img src="/img/lessons/4.png"> COMING SOON</h1>
-				{{-- @include('weeks.third')
 				<hr class="lhr">
-				@include('weeks.fourth') --}}
+
+				@include('weeks.fourth')
+
+				<h1 style="text-align: center; color: white; font-family: 'algerian';">WEEK <img src="/img/lessons/4r.png"> CHALLENGES Loading... </h1>
+			
 	</div>
 </div>
 

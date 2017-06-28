@@ -47,8 +47,8 @@ class PoemsController extends Controller
     {
     	$this->validate(request(),
     		[
-    			'title'=>'required',
-    			'body'=>'required',
+    			'title'=>'required|min:3',
+    			'body'=>'required|min:15',
                                     'category'=>'required'
     		]);
 
@@ -75,6 +75,26 @@ class PoemsController extends Controller
             $poem->tags()->attach($tag);
 
             session()->flash('message','Your Poem has been published successfully');
+
+            return redirect()->back();
+    }
+
+    public function update(Request $request)
+    {
+            $this->validate(request(),
+            [
+                'title'=>'required|min:3',
+                'body'=>'required|min:15'
+            ]);
+
+            $poem = Poem::find($request->p_id);
+
+            $poem->title = $request->title;
+            $poem->body=$request->body;
+
+            $poem->update();
+
+            session()->flash('message','Your Poem has been updated successfully');
 
             return redirect()->back();
     }

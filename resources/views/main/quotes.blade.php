@@ -15,8 +15,10 @@
 			@if($q->id % 2 ==0)
 			<div class="col-sm-3">
 				<p class="body"  style=" color:#33ffff;">{!! nl2br($q->body) !!} 
-					<i><small style="color: grey;"> {{ $q->created_at->toFormattedDateString() }} </small></i><br>
-					<small id="pn"> {{ ucfirst($q->user->name) }} </small>
+					<i><small style="color: grey;"> {{ $q->created_at->diffForHumans() }} </small></i>
+
+					<br>
+					<small style="color:yellow;"> {{ ucfirst($q->user->first_name ." ". $q->user->last_name) }} </small>
 				</p>	
 				
 				
@@ -26,8 +28,10 @@
 			
 			<div class="col-sm-3" id="odd">
 				<p class="body" style="color:white;">{!! nl2br($q->body) !!} 
-					<small style="color: grey;"><i> {{ $q->created_at->toFormattedDateString() }} </i></small><br>
-					<small id="pn"> {{ ucfirst($q->user->name) }} </small>
+					<small style="color: grey;"><i> {{ $q->created_at->diffForHumans() }} </i></small>
+					
+					<br>
+					<small style="color:yellow;"> {{ ucfirst($q->user->first_name ." ". $q->user->last_name) }} </small>
 				</p>	
 				
 				

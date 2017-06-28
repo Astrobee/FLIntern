@@ -39,7 +39,6 @@ class QuotesController extends Controller
     {
     	$this->validate(request(),
     		[
-    			'title'=>'required',
     			'body'=>'required',
     		]);
 
@@ -54,7 +53,6 @@ class QuotesController extends Controller
 
     		$quote = new Quote;
 
-    		$quote->title = $request->title;
     		$quote->body=$request->body;
     		$quote->user_id=auth()->id();
 

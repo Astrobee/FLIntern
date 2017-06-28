@@ -53,7 +53,7 @@ class RegistrationController extends Controller
              $image->save();
 
 	  // sending user a registration success mail
-        //\Mail::to($user)->send(new RegistrationMail($user));
+        \Mail::to($user)->send(new RegistrationMail($user));
 
         
         

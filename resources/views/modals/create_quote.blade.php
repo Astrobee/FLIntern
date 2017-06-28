@@ -15,12 +15,6 @@
 			{{ csrf_field() }}
 
 			<div class="form-group">
-			    <label for="title">Title:</label>
-			    <input type='text' class="form-control" id="title" name="title" placeholder="quote's title" required>
-			</div>
-
-
-			<div class="form-group">
 			    <label for="body">Body:</label>
 			    <textarea class="form-control" id="body" name="body" rows="8" placeholder="enter quote here..." required></textarea>
 			 </div>
